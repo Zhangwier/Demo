@@ -1,22 +1,29 @@
-class SetOnceMappingMixin:
-    """自定义混入类"""
-    __slots__ = ()
+class StreamHasher():
+    """哈希摘要生成器"""
 
-    def __setitem__(self, key, value):
-        if key in self:
-            raise KeyError(str(key) + ' already set')
-        return super().__setitem__(key, value)
+    def __init__(self, alg='md5', size=4096):
+        self.size = size
+        alg = alg.lower()
+        self.hasher = getattr(__import__('hashlib'), alg.lower())()
+
+    def __call__(self, stream):
+        return self.to_digest(stream)
+
+    def to_digest(self, stream):
+        """生成十六进制形式的摘要"""
+        for buf in iter(lambda: stream.read(self.size), b''):
+            self.hasher.update(buf)
+        return self.hasher.hexdigest()
+
+def main():
+    """主函数"""
+    hasher1 = StreamHasher()
+    with open('Python-3.7.6.tgz', 'rb') as stream:
+        print(hasher1.to_digest(stream))
+    hasher2 = StreamHasher('sha1')
+    with open('Python-3.7.6.tgz', 'rb') as stream:
+        print(hasher2(stream))
 
 
-class SetOnceDict(SetOnceMappingMixin, dict):
-    """自定义字典"""
-    pass
-
-
-my_dict= SetOnceDict()
-try:
-    my_dict['username'] = 'jackfrued'
-    my_dict['username'] = 'hellokitty'
-except KeyError:
-    pass
-print(my_dict)
+if __name__ == '__main__':
+    main()
