@@ -1,0 +1,3 @@
+#.py
+
+import arcade
