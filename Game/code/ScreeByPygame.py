@@ -138,7 +138,7 @@ class Server():
     def brain(self):
         pass
 
-    def data_update(data):
+    def data_update(self,data):
         pass
 
     def data_load(self, data_adr):
