@@ -1,3 +1,0 @@
-"""
-    python why so difficulty
-"""
