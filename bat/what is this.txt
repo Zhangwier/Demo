@@ -1,0 +1,8 @@
+@echo off
+set ^&=setlocal enabledelayedexpansion
+set ^^^^^hero=^^^^^&p
+set ^au=^^^au
+set ^^^^^^^^^=障眼法
+%&%
+set ^^^^^se=^^^se!
+echo %^^^^%!%^^hero%!au%^se%

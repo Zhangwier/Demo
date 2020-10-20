@@ -1,0 +1,62 @@
+set "ELEMENTS=可用皮肤                        -+○●□■☉⊕Θ★☆╳※▓◆
+set "max_view_w=最大视宽
+set "max_view_h=最大视长
+set "max_anim=最大生物容量
+set "max_move_all=最大动态生物容量
+set "max_mod=最大mod数
+set "max_ctrs=最大按键数
+set "max_num=最大生物词条
+set "max_car=最大载具词条
+set "max_goods=最大物品词条
+
+(A+辨识码) == (所有生物)
+(B+辨识码) == (动态生物)
+set "IO%i%%j%=%num%"
+set "A%num%_0=" ::人工智脑
+set "A%num%_1=16" ::基因链数量
+set "A%num%_2=1" ::x坐标(i坐标)
+set "A%num%_3=1" ::y坐标(j坐标)
+set "A%num%_4=呆瓜" ::姓名
+set "A%num%_5=100" ::当前体力
+set "A%num%_6=100" ::当前生命状态
+set "A%num%_7=100" ::san
+set "A%num%_8=0" ::外穿装备(手持和穿戴)
+set "A%num%_9=0" ::背包
+set "A%num%_10=0" ::目标吸引状态
+set "A%num%_11=0" ::跟随者
+set "A%num%_12=0" ::载具
+set "A%num%_13=0" ::移动速度
+set "A%num%_14=0" ::目标对待方式0_无视 1_敌对 2_守护 3_遗忘 4_小丑
+set "A%num%_15=1" ::智商 0_无条件 1_正常 2_预判 3_军师级
+set "A%num%_16=1" ::图标
+
+(C+辨识码) == (所有载具)
+(%num%_12) == (set game_car_1) == (辨识码)
+set C%game_car_1%_1=姓名
+set  C%game_car_1%_2=速度
+set  C%game_car_1%_3=护甲
+set  C%game_car_1%_4=仓库数量  ( _1    _2 )
+set  C%game_car_1%_5=完损度  (大于护甲值则减1，完损度大于0可保护乘客)
+set  C%game_car_1%_6=最大乘客
+set  C%game_car_1%_7=武器系统 (1 机枪)
+
+(D+辨识码) == (所有物品)
+(%num%_12) == (set game_goods_1) == (辨识码)
+set game_goods_1_1=姓名
+set game_goods_1_2=投掷速度
+set game_goods_1_3=护甲
+set game_goods_1_4=容量开关
+set game_goods_1_5=完损度  (正常情况下，受击时减一)
+set game_goods_1_6=使用次数 (正常情况下，使用时减一) (-1为无限)
+set game_goods_1_7=伤害值
+set game_goods_1_8=图标
+set game_goods_1_9=伤害目标
+set game_goods_1_10=特殊操作
+
+
+
+
+
+
+
+

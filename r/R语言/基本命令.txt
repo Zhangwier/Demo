@@ -1,0 +1,3 @@
+install.packages("funLBM")
+library(funLBM)
+help(package="funLBM")
